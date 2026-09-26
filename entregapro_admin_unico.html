@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EntregaPro • Painel do Entregador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root{--accent:#ff7a00;--accent-soft:color-mix(in srgb,var(--accent) 10%,transparent);--accent-pale:color-mix(in srgb,var(--accent) 8%,transparent)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#f5f7fa;color:#17202a}button,input,select{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}.login-screen{min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 70% 20%,#243447,#0e141b 55%);padding:20px}.login-card{width:min(410px,100%);background:#fff;border-radius:28px;padding:36px;box-shadow:0 25px 80px #0006;text-align:center}.brand-mark{font-size:48px;background:#fff3e8;width:80px;height:80px;border-radius:24px;display:grid;place-items:center;margin:auto auto 15px}.login-card h1{margin:0;font-size:30px}.login-card h1 span,.logo span{color:var(--accent)}.muted,.hint{color:#788391}.login-card label,.form-card label{display:block;text-align:left;font-weight:600;margin:20px 0 0}.login-card input,.form-card input,.form-card select,.table-tools input,.table-tools select{width:100%;border:1px solid #e0e5eb;border-radius:14px;padding:14px;margin-top:8px;outline:none;background:#fff}.login-card input:focus,.form-card input:focus,.form-card select:focus{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 8%,transparent)}.primary{background:var(--accent);color:white;border-radius:14px;padding:14px 20px;font-weight:800}.full{width:100%;margin-top:22px}.hint{display:block;margin-top:15px;font-size:12px}.app{display:flex;min-height:100vh}.sidebar{width:245px;background:#111820;color:#aeb8c2;padding:24px 16px;display:flex;flex-direction:column;position:fixed;height:100vh}.logo{font-size:20px;color:#fff;padding:5px 12px 35px}.sidebar nav{display:grid;gap:7px}.nav{background:transparent;color:#9da9b5;text-align:left;padding:13px 15px;border-radius:13px;font-weight:600}.nav:hover,.nav.active{background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent)}.side-user{margin-top:auto;background:#1b242e;border-radius:16px;padding:12px;display:flex;align-items:center;gap:10px}.avatar{width:38px;height:38px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800}.side-user div:nth-child(2){flex:1}.side-user small{display:block;color:#7e8a96;font-size:11px;margin-top:3px}.side-user button{background:transparent;color:#9da9b5;font-size:18px}.main{margin-left:245px;width:calc(100% - 245px);padding:0 5%;max-width:1500px}.topbar{height:95px;display:flex;align-items:center;justify-content:space-between}.eyebrow{font-size:11px;letter-spacing:1.5px;font-weight:800;color:#8995a1}.topbar h2{margin:5px 0 0;font-size:22px}.top-actions{display:flex;gap:10px;align-items:center}.status{font-size:12px;background:#fff;padding:9px 12px;border-radius:20px;box-shadow:0 2px 12px #15202b0a}.status i{display:inline-block;width:7px;height:7px;background:#28b67a;border-radius:50%;margin-right:6px}.icon-btn{background:#fff;padding:10px;border-radius:12px}.hero{background:linear-gradient(120deg,#18232d,#263746);border-radius:26px;padding:34px 38px;color:white;display:flex;justify-content:space-between;align-items:center;overflow:hidden;position:relative}.hero:after{content:"🛵";position:absolute;right:180px;bottom:-25px;font-size:150px;opacity:.07}.pill{display:inline-block;font-size:10px;letter-spacing:1.3px;font-weight:800;background:#ffffff16;padding:7px 10px;border-radius:20px}.pill.green{background:#dff8ec;color:#17865a}.hero h1{font-size:34px;line-height:1.1;margin:13px 0}.hero h1 strong{color:var(--accent)}.hero p{color:#bdc8d1;margin:0}.hero-btn{background:var(--accent);color:#fff;border-radius:14px;padding:15px 20px;font-weight:800;z-index:1}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:18px 0}.stat{background:#fff;border-radius:18px;padding:20px;box-shadow:0 4px 20px #15202b08}.stat span{font-size:20px;display:block;margin-bottom:15px}.stat small{color:#7c8792;font-size:12px}.stat strong{display:block;font-size:25px;margin-top:6px}.stat.accent{background:#fff3e8}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:#fff;border-radius:20px;padding:22px;box-shadow:0 4px 20px #15202b08}.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.card h3{margin:0;font-size:16px}.card-head small{color:#8995a1}.text-btn{background:transparent;color:var(--accent);font-weight:700}.bars{height:160px;display:flex;align-items:end;gap:12px;padding:10px 4px}.bar-wrap{flex:1;height:100%;display:flex;align-items:end;justify-content:center}.bar{width:100%;max-width:35px;background:linear-gradient(var(--accent),var(--accent));border-radius:8px 8px 3px 3px;min-height:8px}.bar-wrap small{position:absolute;margin-top:180px;color:#8995a1}.delivery-row{display:flex;align-items:center;padding:12px 0;border-bottom:1px solid #eef1f4}.delivery-row:last-child{border:0}.delivery-id{font-weight:800;width:80px}.delivery-info{flex:1}.delivery-info small{display:block;color:#8995a1;margin-top:3px}.delivery-fee{font-weight:800;color:var(--accent)}.closing{margin:18px 0 40px}.closing>div{display:flex;align-items:center;justify-content:space-between;gap:20px}.closing h3{margin:12px 0 6px}.closing p{color:#8995a1;margin:0}.closing-number{text-align:right}.closing-number b{display:block;font-size:27px;margin:4px 0 10px}.closing-number button,.secondary{background:#eef1f4;padding:11px 14px;border-radius:11px;font-weight:700}.page-title{display:flex;justify-content:space-between;align-items:end;margin:15px 0 25px}.page-title h1{font-size:32px;margin:6px 0}.page-title p{margin:0;color:#8995a1}.form-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;max-width:900px}.form-card{padding:30px}.fee-preview{margin:25px 0;background:#fff3e8;border-radius:16px;padding:18px;display:flex;justify-content:space-between;align-items:center;color:#9a5a23}.fee-preview b{font-size:28px;color:var(--accent)}.huge{width:100%;padding:17px}.form-msg{text-align:center;font-weight:700;min-height:20px}.tip-card{background:#18232d;color:white;border-radius:20px;padding:30px}.tip-icon{font-size:32px}.tip-card h3{font-size:20px}.tip-card p{color:#b9c3cb;line-height:1.6}.mini{background:#ffffff0d;margin-top:10px;padding:12px;border-radius:12px}.mini b{background:var(--accent);border-radius:8px;padding:5px 8px;margin-right:8px}.compact{grid-template-columns:repeat(2,220px)}.table-tools{display:flex;gap:10px;margin-bottom:12px}.table-tools input{margin:0}.table-tools select{width:160px;margin:0}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:14px;border-bottom:1px solid #eef1f4;font-size:13px}.table th{color:#8995a1;font-size:11px;text-transform:uppercase}.rider{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #eef1f4}.rider .avatar{width:34px;height:34px}.rider div:nth-child(2){flex:1}.rider small{display:block;color:#8995a1}.online{width:8px;height:8px;background:#27b67a;border-radius:50%}.area{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eef1f4}.area b{color:var(--accent)}.modal{position:fixed;inset:0;background:#10182099;display:grid;place-items:center;padding:20px;z-index:20}.modal-box{background:#fff;border-radius:22px;padding:28px;max-width:560px;width:100%;position:relative;max-height:85vh;overflow:auto}.modal-x{position:absolute;right:15px;top:12px;background:#f1f3f5;border-radius:50%;width:32px;height:32px;font-size:20px}.close-summary{text-align:center}.close-summary .big{font-size:42px;font-weight:800;color:var(--accent);margin:12px}.close-line{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eee}.close-summary button{margin-top:20px}.success{color:#1a9b68}@media(max-width:900px){.sidebar{width:72px;padding:18px 9px}.logo{font-size:0;text-align:center;padding-bottom:25px}.logo:first-letter{font-size:25px}.nav span,.side-user div:nth-child(2),.side-user button{display:none}.nav{text-align:center;padding:14px 5px;font-size:20px}.side-user{padding:8px;justify-content:center}.main{margin-left:72px;width:calc(100% - 72px);padding:0 3%}.stats{grid-template-columns:repeat(2,1fr)}.grid2,.form-layout{grid-template-columns:1fr}.hero{padding:25px;}.hero h1{font-size:27px}.hero:after{display:none}}@media(max-width:600px){.topbar{height:82px}.status{display:none}.hero{display:block}.hero-btn{margin-top:20px;width:100%}.stats{gap:10px}.stat{padding:15px}.stat strong{font-size:20px}.closing>div{display:block}.closing-number{text-align:left;margin-top:20px}.page-title{display:block}.page-title .secondary{margin-top:15px}.table-tools{display:grid}.table-tools select{width:100%}.table{min-width:560px}.table-card{overflow:auto}.form-card{padding:20px}}\n
+.settings-card{margin:18px 0 40px}.settings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.settings-grid label{font-weight:600;font-size:13px}.settings-grid input{width:100%;border:1px solid #e0e5eb;border-radius:12px;padding:13px;margin-top:7px;background:#fff;outline:none}.settings-grid input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-pale)}.settings-grid .wide{grid-column:1/-1}.settings-grid input[type=color]{height:47px;padding:5px}.settings-actions{display:flex;gap:10px;align-items:center;margin-top:18px}.settings-actions .secondary{margin:0}.settings-preview{margin-top:16px;background:#f7f8fa;border:1px dashed #d9dfe5;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px}.settings-preview b{font-size:18px}.settings-preview small{color:#8995a1}.mini-edit{background:transparent;color:var(--accent);font-size:11px;font-weight:800;margin-left:5px}
+@media(max-width:600px){.settings-grid{grid-template-columns:1fr}.settings-grid .wide{grid-column:auto}.settings-actions{display:grid}.settings-actions button{width:100%}}
+</style>
+</head>
+<body>
+<div id="login" class="login-screen">
+  <div class="login-card">
+    <div class="brand-mark" data-brand-logo>🛵</div><h1><span data-brand-name>EntregaPro</span></h1>
+    <p class="muted" id="loginTagline">Controle de entregas da sua loja</p>
+    <label>Usuário<input id="loginUser" placeholder="matheus ou admin"></label>
+    <label>Senha<input id="loginPass" type="password" placeholder="••••••••"></label>
+    <button class="primary full" onclick="login()">Entrar</button>
+    <small class="hint">Demo: <b>matheus / 1234</b> ou <b>admin / 1234</b></small>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="logo"><span data-brand-logo>🛵</span> <b data-brand-name>EntregaPro</b></div>
+    <nav>
+      <button class="nav active" data-page="dashboard">🏠 <span>Dashboard</span></button>
+      <button class="nav" data-page="nova">➕ <span>Nova entrega</span></button>
+      <button class="nav" data-page="historico">📋 <span>Histórico</span></button>
+      <button class="nav admin-only" data-page="admin">👑 <span>Administração</span></button>
+    </nav>
+    <div class="side-user"><div class="avatar" id="avatar">M</div><div><b id="sideName">Matheus</b><small id="sideRole">Entregador</small></div><button onclick="logout()" title="Sair">↪</button></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><div class="eyebrow" id="dateLabel"></div><h2 id="greeting">Boa noite 👋</h2></div>
+      <div class="top-actions"><span class="status"><i></i> Online</span><button class="icon-btn" onclick="openSettings()">⚙️</button></div>
+    </header>
+
+    <section id="dashboard" class="page">
+      <div class="hero">
+        <div><span class="pill">PAINEL DE HOJE</span><h1><span id="heroTitle">Suas entregas,</span><br><strong id="heroHighlight">sem complicação.</strong></h1><p id="heroSubtitle">Registre a comanda e deixe o sistema cuidar das contas.</p></div>
+        <button class="hero-btn" onclick="showPage('nova')">＋ Nova entrega</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>🧾</span><small>Entregas hoje</small><strong id="statDeliveries">0</strong></div>
+        <div class="stat"><span>💰</span><small>Taxas hoje</small><strong id="statFees">R$ 0,00</strong></div>
+        <div class="stat"><span>📈</span><small>Média / entrega</small><strong id="statAvg">R$ 0,00</strong></div>
+        <div class="stat accent"><span>💵</span><small>A receber</small><strong id="statReceive">R$ 0,00</strong></div>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="card-head"><div><h3>Ritmo de entregas</h3><small>Últimas 6 horas</small></div><span>📊</span></div><div id="bars" class="bars"></div></div>
+        <div class="card"><div class="card-head"><div><h3>Últimas entregas</h3><small>Registros mais recentes</small></div><button class="text-btn" onclick="showPage('historico')">Ver tudo →</button></div><div id="recent"></div></div>
+      </div>
+      <div class="card closing"><div><div><span class="pill green">FECHAMENTO</span><h3>Pronto para acertar com a loja?</h3><p>Seu resumo é calculado automaticamente com todas as entregas registradas hoje.</p></div><div class="closing-number"><small>Total de taxas</small><b id="closingTotal">R$ 0,00</b><button onclick="showClosing()">Ver fechamento</button></div></div></div>
+    </section>
+
+    <section id="nova" class="page hidden">
+      <div class="page-title"><div><span class="eyebrow">REGISTRAR</span><h1>Nova entrega</h1><p>Leva poucos segundos para lançar uma comanda.</p></div></div>
+      <div class="form-layout">
+        <div class="card form-card">
+          <label>ID da comanda<input id="orderId" inputmode="numeric" placeholder="Ex.: 1528" autofocus></label>
+          <label>Bairro<select id="neighborhood" onchange="updateFee()"></select></label>
+          <div class="fee-preview"><span>Taxa desta entrega</span><b id="feePreview">R$ 0,00</b></div>
+          <button class="primary huge" onclick="addDelivery()">✓ Confirmar entrega</button>
+          <p id="formMsg" class="form-msg"></p>
+        </div>
+        <div class="tip-card"><div class="tip-icon">⚡</div><h3>Rápido e automático</h3><p>O bairro já possui uma taxa cadastrada. Você só precisa informar a comanda, selecionar o bairro e confirmar.</p><div class="mini"><b>1</b> Digite a comanda</div><div class="mini"><b>2</b> Selecione o bairro</div><div class="mini"><b>3</b> Confirme e pronto</div></div>
+      </div>
+    </section>
+
+    <section id="historico" class="page hidden">
+      <div class="page-title"><div><span class="eyebrow">SEU HISTÓRICO</span><h1>Entregas</h1><p>Todos os registros do seu usuário.</p></div><button class="secondary" onclick="showClosing()">📄 Fechamento de hoje</button></div>
+      <div class="stats compact"><div class="stat"><small>Comandas</small><strong id="histCount">0</strong></div><div class="stat"><small>Taxas</small><strong id="histFees">R$ 0,00</strong></div></div>
+      <div class="card table-card"><div class="table-tools"><input id="search" oninput="renderHistory()" placeholder="🔎 Buscar ID ou bairro..."><select id="filterDate" onchange="renderHistory()"><option value="today">Hoje</option><option value="all">Todos</option></select></div><div id="table"></div></div>
+    </section>
+
+    <section id="admin" class="page hidden admin-page">
+      <div class="page-title"><div><span class="eyebrow">ADMINISTRAÇÃO</span><h1>Painel da loja</h1><p>Visão consolidada dos entregadores e taxas.</p></div></div>
+      <div class="stats"><div class="stat"><small>Entregas hoje</small><strong id="allCount">0</strong></div><div class="stat"><small>Taxas hoje</small><strong id="allFees">R$ 0,00</strong></div><div class="stat"><small>Entregadores</small><strong>3</strong></div><div class="stat accent"><small>A pagar hoje</small><strong id="allPay">R$ 0,00</strong></div></div>
+      <div class="grid2"><div class="card"><div class="card-head"><h3>Entregadores</h3><span>🛵</span></div><div id="riders"></div></div><div class="card"><div class="card-head"><h3>Bairros e taxas</h3><button class="text-btn" onclick="addNeighborhood()">＋ Adicionar</button></div><div id="areas"></div></div></div>
+      <div class="card settings-card">
+        <div class="card-head"><div><h3>🎨 Personalização do sistema</h3><small>Altere a identidade do app sem mexer no código.</small></div><span>⚙️</span></div>
+        <div class="settings-grid">
+          <label>Nome do sistema<input id="settingsSystemName" placeholder="Ex.: EntregaPro"></label>
+          <label>Nome da loja<input id="settingsStoreName" placeholder="Ex.: Lanches do Matheus"></label>
+          <label>Frase de entrada<input id="settingsTagline" placeholder="Controle de entregas da sua loja"></label>
+          <label>Ícone / logo (emoji)<input id="settingsLogo" maxlength="4" placeholder="🛵"></label>
+          <label>Cor principal<input id="settingsAccent" type="color"></label>
+          <label>Título do dashboard<input id="settingsHeroTitle" placeholder="Suas entregas,"></label>
+          <label>Destaque do título<input id="settingsHeroHighlight" placeholder="sem complicação."></label>
+          <label class="wide">Texto do dashboard<input id="settingsHeroSubtitle" placeholder="Registre a comanda e deixe o sistema cuidar das contas."></label>
+        </div>
+        <div class="settings-actions"><button class="primary" onclick="saveSettings()">✓ Salvar personalização</button><button class="secondary" onclick="resetSettings()">Restaurar padrão</button></div>
+        <p id="settingsMsg" class="form-msg"></p>
+        <div class="settings-preview"><span class="eyebrow">PRÉVIA</span><b id="storeNamePreview">Sua loja de delivery</b><small>As alterações ficam salvas neste navegador.</small></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden"><div class="modal-box"><button class="modal-x" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+</div>
+<script>
+const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const key='entregapro_demo_v2';
+const defaultSettings={systemName:'EntregaPro',storeName:'Sua loja de delivery',tagline:'Controle de entregas da sua loja',logo:'🛵',accent:'#ff7a00',heroTitle:'Suas entregas,',heroHighlight:'sem complicação.',heroSubtitle:'Registre a comanda e deixe o sistema cuidar das contas.'};
+const seed={
+ users:[
+  {id:'u1',name:'Matheus',user:'matheus',pass:'1234',role:'rider'},
+  {id:'u2',name:'João',user:'joao',pass:'1234',role:'rider'},
+  {id:'u3',name:'Pedro',user:'pedro',pass:'1234',role:'rider'},
+  {id:'a1',name:'Administrador',user:'admin',pass:'1234',role:'admin'}
+ ],
+ areas:[['Centro',5],['Jardim X',6],['Bairro Y',7],['Bairro Z',8],['Vila Nova',6]],
+ deliveries:[],
+ settings:{...defaultSettings}
+};
+let db=JSON.parse(localStorage.getItem(key)||'null')||seed;
+db.settings={...defaultSettings,...(db.settings||{})};
+function applyBranding(){
+ const s=db.settings;
+ document.title=`${s.systemName} • Painel do Entregador`;
+ document.documentElement.style.setProperty('--accent',s.accent||defaultSettings.accent);
+ document.documentElement.style.setProperty('--accent-soft',`${s.accent||defaultSettings.accent}18`);
+ document.documentElement.style.setProperty('--accent-pale',`${s.accent||defaultSettings.accent}15`);
+ document.querySelectorAll('[data-brand-name]').forEach(x=>x.textContent=s.systemName);
+ document.querySelectorAll('[data-brand-logo]').forEach(x=>x.textContent=s.logo);
+ if(document.getElementById('loginTagline')) loginTagline.textContent=s.tagline;
+ if(document.getElementById('heroTitle')) heroTitle.textContent=s.heroTitle;
+ if(document.getElementById('heroHighlight')) heroHighlight.textContent=s.heroHighlight;
+ if(document.getElementById('heroSubtitle')) heroSubtitle.textContent=s.heroSubtitle;
+ if(document.getElementById('storeNamePreview')) storeNamePreview.textContent=s.storeName;
+}
+applyBranding();
+let current=null;
+function save(){localStorage.setItem(key,JSON.stringify(db))}
+function today(){return new Date().toISOString().slice(0,10)}
+function login(){
+ const u=loginUser.value.trim(),p=loginPass.value;
+ current=db.users.find(x=>x.user===u&&x.pass===p);
+ if(!current){alert('Usuário ou senha inválidos.');return}
+ login.classList.add('hidden');app.classList.remove('hidden');
+ sideName.textContent=current.name;avatar.textContent=current.name[0].toUpperCase();sideRole.textContent=current.role==='admin'?'Administrador':'Entregador';
+ document.querySelectorAll('.admin-only').forEach(x=>x.classList.toggle('hidden',current.role!=='admin'));
+ dateLabel.textContent=new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long'});
+ greeting.textContent=`Boa ${new Date().getHours()<12?'dia':new Date().getHours()<18?'tarde':'noite'}, ${current.name.split(' ')[0]} 👋`;
+ fillAreas();refresh();
+}
+function logout(){current=null;app.classList.add('hidden');login.classList.remove('hidden');loginPass.value=''}
+document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+function showPage(page){
+ document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));
+ document.getElementById(page).classList.remove('hidden');
+ document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===page));
+ refresh();
+}
+function myDeliveries(){return db.deliveries.filter(d=>d.userId===current.id)}
+function updateFee(){const a=db.areas.find(x=>x[0]===neighborhood.value);feePreview.textContent=money(a?a[1]:0)}
+function fillAreas(){neighborhood.innerHTML=db.areas.map(a=>`<option value="${a[0]}">${a[0]}</option>`).join('');updateFee()}
+function addDelivery(){
+ const id=orderId.value.trim(), area=neighborhood.value, a=db.areas.find(x=>x[0]===area);
+ if(!id){formMsg.textContent='Digite o ID da comanda.';formMsg.className='form-msg';orderId.focus();return}
+ if(!a){return}
+ if(db.deliveries.some(d=>d.id===id)){formMsg.textContent='Esta comanda já foi registrada.';formMsg.className='form-msg';return}
+ db.deliveries.push({id,userId:current.id,user:current.name,area,fee:a[1],date:today(),time:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})});
+ save();formMsg.textContent='✓ Entrega registrada com sucesso!';formMsg.className='form-msg success';orderId.value='';refresh();setTimeout(()=>formMsg.textContent='',1800);
+}
+function refresh(){if(!current)return;applyBranding();renderStats();renderRecent();renderBars();renderHistory();if(current.role==='admin')renderAdmin()}
+function renderStats(){
+ const ds=myDeliveries(),fees=ds.reduce((s,d)=>s+d.fee,0);
+ statDeliveries.textContent=ds.filter(d=>d.date===today()).length;
+ const td=ds.filter(d=>d.date===today()),tf=td.reduce((s,d)=>s+d.fee,0);
+ statFees.textContent=money(tf);statAvg.textContent=money(td.length?tf/td.length:0);statReceive.textContent=money(tf);closingTotal.textContent=money(tf);
+ histCount.textContent=ds.length;histFees.textContent=money(ds.reduce((s,d)=>s+d.fee,0));
+}
+function renderRecent(){
+ const ds=myDeliveries().filter(d=>d.date===today()).slice(-5).reverse();
+ recent.innerHTML=ds.length?ds.map(d=>`<div class="delivery-row"><b class="delivery-id">#${d.id}</b><div class="delivery-info">${d.area}<small>${d.time} • entregue</small></div><b class="delivery-fee">${money(d.fee)}</b></div>`).join(''):'<p class="muted">Nenhuma entrega registrada hoje.</p>';
+}
+function renderBars(){
+ const td=myDeliveries().filter(d=>d.date===today()), hours={};
+ td.forEach(d=>{const h=d.time.split(':')[0];hours[h]=(hours[h]||0)+1});
+ const hs=[...Array(6)].map((_,i)=>String((new Date().getHours()-5+i+24)%24).padStart(2,'0'));
+ const max=Math.max(1,...hs.map(h=>hours[h]||0));
+ bars.innerHTML=hs.map(h=>`<div class="bar-wrap" title="${hours[h]||0} entrega(s)"><div class="bar" style="height:${Math.max(8,(hours[h]||0)/max*100)}%"></div><small>${h}h</small></div>`).join('');
+}
+function renderHistory(){
+ if(!current)return;let ds=myDeliveries();if(filterDate.value==='today')ds=ds.filter(d=>d.date===today());
+ const q=(search.value||'').toLowerCase();ds=ds.filter(d=>d.id.toLowerCase().includes(q)||d.area.toLowerCase().includes(q));
+ ds=ds.slice().reverse();
+ table.innerHTML=ds.length?`<table class="table"><thead><tr><th>Comanda</th><th>Bairro</th><th>Taxa</th><th>Data</th><th>Hora</th></tr></thead><tbody>${ds.map(d=>`<tr><td><b>#${d.id}</b></td><td>${d.area}</td><td><b>${money(d.fee)}</b></td><td>${new Date(d.date+'T12:00:00').toLocaleDateString('pt-BR')}</td><td>${d.time}</td></tr>`).join('')}</tbody></table>`:'<p class="muted">Nenhuma entrega encontrada.</p>';
+}
+function renderAdmin(){
+ const td=db.deliveries.filter(d=>d.date===today()),fee=td.reduce((s,d)=>s+d.fee,0);allCount.textContent=td.length;allFees.textContent=money(fee);allPay.textContent=money(fee);
+ riders.innerHTML=db.users.filter(u=>u.role==='rider').map(u=>{const x=td.filter(d=>d.userId===u.id),f=x.reduce((s,d)=>s+d.fee,0);return `<div class="rider"><div class="avatar">${u.name[0]}</div><div><b>${u.name}</b><small>${x.length} entregas • ${money(f)}</small></div><i class="online"></i></div>`}).join('');
+ areas.innerHTML=db.areas.map((a,i)=>`<div class="area"><span>📍 ${a[0]}</span><div><b>${money(a[1])}</b> <button class="mini-edit" onclick="editNeighborhood(${i})">Editar</button></div></div>`).join('');
+ loadSettingsForm();
+}
+function loadSettingsForm(){
+ if(current?.role!=='admin')return;
+ const s=db.settings||defaultSettings;
+ settingsSystemName.value=s.systemName;settingsStoreName.value=s.storeName;settingsTagline.value=s.tagline;settingsLogo.value=s.logo;settingsAccent.value=s.accent;settingsHeroTitle.value=s.heroTitle;settingsHeroHighlight.value=s.heroHighlight;settingsHeroSubtitle.value=s.heroSubtitle;
+}
+function saveSettings(){
+ if(current?.role!=='admin')return;
+ const name=settingsSystemName.value.trim()||defaultSettings.systemName;
+ db.settings={systemName:name,storeName:settingsStoreName.value.trim()||defaultSettings.storeName,tagline:settingsTagline.value.trim()||defaultSettings.tagline,logo:settingsLogo.value.trim()||defaultSettings.logo,accent:settingsAccent.value||defaultSettings.accent,heroTitle:settingsHeroTitle.value.trim()||defaultSettings.heroTitle,heroHighlight:settingsHeroHighlight.value.trim()||defaultSettings.heroHighlight,heroSubtitle:settingsHeroSubtitle.value.trim()||defaultSettings.heroSubtitle};
+ save();applyBranding();settingsMsg.textContent='✓ Personalização salva com sucesso.';settingsMsg.className='form-msg success';setTimeout(()=>settingsMsg.textContent='',2200);
+}
+function resetSettings(){
+ if(!confirm('Restaurar a identidade visual padrão do sistema?'))return;
+ db.settings={...defaultSettings};save();loadSettingsForm();applyBranding();settingsMsg.textContent='Identidade visual restaurada.';settingsMsg.className='form-msg success';
+}
+function editNeighborhood(i){
+ const old=db.areas[i]; if(!old)return;
+ const name=prompt('Nome do bairro:',old[0]);if(!name)return;
+ const fee=parseFloat(prompt('Valor da taxa:',String(old[1])));if(isNaN(fee))return;
+ db.areas[i]=[name.trim(),fee];save();fillAreas();renderAdmin();
+}
+
+function showClosing(){
+ const ds=myDeliveries().filter(d=>d.date===today()),fee=ds.reduce((s,d)=>s+d.fee,0);
+ modalContent.innerHTML=`<div class="close-summary"><span class="pill green">FECHAMENTO DE HOJE</span><h2>${current.name}</h2><div class="big">${money(fee)}</div><p class="muted">Total de taxas a receber</p><div class="close-line"><span>🧾 Comandas entregues</span><b>${ds.length}</b></div><div class="close-line"><span>📍 Bairros atendidos</span><b>${new Set(ds.map(d=>d.area)).size}</b></div><div class="close-line"><span>📊 Média por entrega</span><b>${money(ds.length?fee/ds.length:0)}</b></div><button class="primary full" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button></div>`;
+ modal.classList.remove('hidden');
+}
+function closeModal(){modal.classList.add('hidden')}
+function addNeighborhood(){
+ const name=prompt('Nome do bairro:');if(!name)return;
+ const fee=parseFloat(prompt('Valor da taxa (ex.: 5.50):','5'));if(isNaN(fee))return;
+ db.areas.push([name,fee]);save();fillAreas();renderAdmin();
+}
+function openSettings(){if(current?.role==='admin')showPage('admin');else alert('As configurações do sistema são gerenciadas pelo administrador.')}
+
+window.onclick=e=>{if(e.target===modal)closeModal()}
+loginPass.addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+
+</script>
+</body></html>
